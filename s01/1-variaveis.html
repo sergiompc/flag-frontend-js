@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JavaScript · template</h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <footer>JavaScript para Frontend · joaogoncalves.net</footer>
+
+    <script>
+        let texto = '';
+
+        // o vosso código vai aqui
+        const curso = 'Javascript para Frontend';
+        const sessoes = 20;
+        const anoDeInicoDoCurso = 2026; // Convencao camelCase
+
+        // let - para dados que vão alterar
+        let sessaoAtual, formador, anoAtual;
+        sessaoAtual = 1;
+        formador = 'João';
+
+        // var antiga = 'evitar';
+        let antiga = 'usar';
+
+        texto = 'Curso: ' + curso + '<br>';           
+        texto += 'Sessoes: ' + sessoes + '<br>'; 
+        texto += 'Sessao Atual: ' + sessaoAtual + '<br>'
+        texto += 'Formador: ' + formador + '<br>'
+        
+
+        // escrever na página
+        let output = document.getElementById('output');
+        output.innerHTML = texto;
+
+    </script>
+</body>
+</html>

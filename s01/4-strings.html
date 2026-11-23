@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JavaScript · template</h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <footer>JavaScript para Frontend · joaogoncalves.net</footer>
+
+    <script>
+        let texto = '';
+
+        const nome = 'Sérgio';
+        const apelido = "Claro";
+        const nacionalodade = `Portuguesa`; // backtics
+        const idade = 35;
+
+        texto += 'Sou o ' + nome + ' ' + apelido + ' e tenho ' + idade + ' anos,<br>';
+
+        // backtics
+        texto += `Sou o ${nome} ${apelido} e tenho ${idade} anos.<br>`;
+
+        // multiline string
+        texto += `
+        Primeira Linha <br>
+        Segunda Linha <br>
+        ${nome} ${apelido} <br>
+        Terceira Linha <br>
+        <hr>
+        `;
+
+        const frase = '  Javascript para Frontend.  ';
+       
+        texto += `
+            Length: ${frase.length} <br>
+            Trim: ${frase.trim()}  <br>
+            Length depois de trim(): ${frase.trim().length},  <br>
+            uppercase: ${frase.toUpperCase()} <br>
+            includes('Front'): ${frase.includes('Front')}<br>
+            replace('Frontend', 'todos'): ${frase.replace('Frontend', 'todos')}<br>
+            trim().slice(0,8): ${frase.trim().slice(0, 8)}<br>        
+        `;
+
+
+        // escrever na página
+        let output = document.getElementById('output');
+        output.innerHTML = texto;
+
+    </script>
+</body>
+</html>
