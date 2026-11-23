@@ -1,6 +1,3 @@
 .DS_Store
 ~$*
 *.tmp
-
-# repositório do formador (clone aninhado, tem o seu próprio .git)
-flag-frontend-js-2627/
