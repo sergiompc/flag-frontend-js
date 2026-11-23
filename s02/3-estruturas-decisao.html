@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>JavaScript · template</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <footer>JavaScript para Frontend · joaogoncalves.net</footer>
+
+    <script>
+      let texto = "";
+
+      // o vosso código vai aqui
+      let saldo = 400;
+
+      // operador binário
+      if (saldo > 500) {
+        texto += "Podes comprar";
+      } else if (saldo > 300) {
+        texto += "Podes comprar metade";
+      } else {
+        texto += "Não podes comprar";
+      }
+
+      // multiplas opçoes
+      const lingua = "pt";
+
+      switch (lingua) {
+        case "pt":
+          texto = "Bom dia!";
+          break;
+
+        case "fr":
+          texto = "Bonjour!";
+          break;
+
+        case "es":
+          texto = "Buenos dias!";
+          break;
+
+        case "en":
+          texto = "Good Morning!";
+          break;
+
+        default:
+          texto = "Desconhecida";
+      }
+
+      // operador ternário
+      const stock = 3;
+
+      // condicao ? verdadeiro : falso
+      const estado = stock > 0 ? "Em Stock" : "Esgotado";
+
+      texto += `temos ${stock} ${stock === 1 ? "unidade" : "unidades"} `;
+
+      /// escrever na página
+      let output = document.getElementById("output");
+      output.innerHTML = texto;
+    </script>
+  </body>
+</html>

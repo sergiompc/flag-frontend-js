@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JavaScript · template</h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <footer>JavaScript para Frontend · joaogoncalves.net</footer>
+
+    <script>
+        let texto = '';
+
+        // o vosso código vai aqui
+        const cliente = ' ana silva ';
+        const produto = ' Teclado';
+        const precoUnitario = 49.9;
+        const quantidade = 3;
+        const taxaIva = 0.23;
+        const miniPortesGratis = 100;
+        const subTotal = quantidade * precoUnitario;
+        const iva = subTotal * taxaIva;
+        const total = subTotal + iva;
+        const portesGratis = total >= miniPortesGratis;        
+
+        texto += `
+            <h3>Recibo</h3>
+            <p>Cliente: <strong>${cliente} </strong> </p>
+            <p>${quantidade} x ${produto} a ${precoUnitario.toFixed(2)}€
+            <p> SubTotal: ${subTotal}€</p>
+            <p> IVA (${taxaIva * 100}%): ${iva.toFixed(2)}€</p>
+            <h4>Total: ${total.toFixed(2)}€ </h4>
+            <p> Portes Grátis: ${portesGratis} </p>
+        `;
+
+
+
+
+        /// escrever na página
+        let output = document.getElementById('output');
+        output.innerHTML = texto;
+    </script>
+
+    <h3>Recibo</h3>
+    <p>Cliente: <strong> </strong> </p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>JavaScript · template</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <footer>JavaScript para Frontend · joaogoncalves.net</footer>
+
+    <script>
+      let texto = "";
+
+      // Pedir as duas notas
+      const nota1 = Number(prompt("Introduz a primeira nota (0 a 20):"));
+      const nota2 = Number(prompt("Introduz a segunda nota (0 a 20):"));
+
+      // Verificar se as notas são válidas
+      if (nota1 < 0 || nota1 > 20 || nota2 < 0 || nota2 > 20) {
+        texto = "As notas têm de estar entre 0 e 20";
+      } else {
+        // Calcular a média
+        let media = (nota1 + nota2) / 2;
+        // Verificar se está aprovado
+        if (media >= 10) {
+          texto = `Média: ${media.toFixed(1)} · Aprovado.`;
+        } else {
+          // Pedir a nota do exame
+          const notaExame = Number(
+            prompt("Introduz a nota do exame (0 a 20):"),
+          );
+
+          // Verificar se a nota do exame é válida
+          if (notaExame < 0 || notaExame > 20) {
+            texto = "As notas têm de estar entre 0 e 20";
+          } else {
+            // Calcular a média final
+            let mediaFinal = (media + notaExame) / 2;
+            // Utilizar o operador ternário
+            let situacao = mediaFinal >= 10 ? "Aprovado em exame" : "Reprovado";
+            texto = `Média: ${media.toFixed(1)} · Exame: ${notaExame} · média final: ${mediaFinal.toFixed(1)} · ${situacao}.`;
+          }
+        }
+      }
+
+      /// escrever na página
+      let output = document.getElementById("output");
+      output.innerHTML = texto;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>JavaScript · template</h1>
+    <main>
+      <section id="output"></section>
+    </main>
+
+    <footer>JavaScript para Frontend · joaogoncalves.net</footer>
+
+    <script>
+      let texto = "";
+
+      // 1. Pedir os dois números
+      const numero1 = Number(prompt("Introduz o primeiro número:"));
+      const numero2 = Number(prompt("Introduz o segundo número:"));
+
+      // 2. Pedir a operação
+      const operacao = prompt("Escolhe a operação: +, -, * ou /");
+
+      // 3. Calcular o resultado
+      let resultado;
+
+      switch (operacao) {
+        case "+":
+          resultado = numero1 + numero2;
+          break;
+
+        case "-":
+          resultado = numero1 - numero2;
+          break;
+
+        case "*":
+          resultado = numero1 * numero2;
+          break;
+
+        case "/":
+          if (numero2 === 0) {
+            resultado = "Não é possível dividir por zero.";
+          } else {
+            resultado = numero1 / numero2;
+          }
+          break;
+
+        default:
+          resultado = "Operação inválida.";
+      }
+
+      // 4. Construir o texto
+      texto += `
+            CALCULADORA<br>
+            Primeiro número: ${numero1}<br>
+            Segundo número: ${numero2}<br>
+            Operação: ${operacao}<br>
+            Resultado: ${typeof resultado === "number" ? resultado.toFixed(2) : resultado}
+        `;
+
+      /// escrever na página
+      let output = document.getElementById("output");
+      output.innerHTML = texto;
+    </script>
+  </body>
+</html>
