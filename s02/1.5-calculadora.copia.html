@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JavaScript · template</h1>
+    <main>
+        <section id="output"></section>
+    </main>
+
+    <footer>JavaScript para Frontend · joaogoncalves.net</footer>
+
+    <script>
+        let texto = '';
+
+        // 1. Pedir dois números
+        const numero1 = prompt("Introduz o primeiro número:");
+        const numero2 = prompt("Introduz o segundo número:");
+
+        // const numero1 = Number(prompt("Introduz o primeiro número:"));
+        // const numero2 = Number(prompt("Introduz o segundo número:"));
+
+        // 2. Construir o texto com as operações
+        texto += `
+            A calculadora<br>
+            ${numero1} + ${numero2} = ${numero1 + numero2}<br>
+            ${numero1} - ${numero2} = ${numero1 - numero2}<br>
+            ${numero1} x ${numero2} = ${numero1 * numero2}<br>
+            ${numero1} : ${numero2} = ${(numero1 / numero2).toFixed(2)}
+        `;
+
+        // 3. Apresentar na página
+        // document.getElementById("resultado").innerHTML = texto;
+
+        /// escrever na página
+        let output = document.getElementById('output');
+        output.innerHTML = texto;
+    </script>
+</body>
+</html>
